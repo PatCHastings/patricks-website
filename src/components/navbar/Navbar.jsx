@@ -1,5 +1,5 @@
 import "./navbar.scss";
-
+// https://www.linkedin.com/in/PatCHastings
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -7,11 +7,16 @@ const Navbar = () => {
       <div className="wrapper">
         <span>Patrick Hastings</span>
         <div className="social">
-          <a href="https://www.linkedin.com/in/patrick-hastings-4a3a6a1b6/">
-            <i className="fab fa-linkedin"></i>
+          <a href="#">
+            <img src="/linkedinwhite.png" alt="" />
+          </a>
+          <a href="#">
+            <img src="/Github-Logo.png" alt="" />
           </a>
         </div>
       </div>
     </div>
   );
 };
+
+export default Navbar;
