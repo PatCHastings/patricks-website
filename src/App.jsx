@@ -8,6 +8,7 @@ const App = () => {
       <section>
         <Navbar />
       </section>
+
       <section>Parallax</section>
       <section>Services</section>
       <section>Portfolio</section>
