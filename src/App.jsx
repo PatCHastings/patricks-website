@@ -5,14 +5,13 @@ import Test from "./Test";
 const App = () => {
   return (
     <div>
-      <section>
+      <section id="Homepage">
         <Navbar />
       </section>
-
-      <section>Parallax</section>
-      <section>Services</section>
-      <section>Portfolio</section>
-      <section>Testimonials</section>
+      <section id="Services">Parallax</section>
+      <section id="Portfolio">Services</section>
+      <section id="Contact">Portfolio</section>
+      <section id="Testimonials">Testimonials</section>
       <section>Team</section>
       <section>Contact</section>
     </div>
