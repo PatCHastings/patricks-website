@@ -11,6 +11,11 @@ const Sidebar = () => {
   const variants = {
     open: {
       clipPath: "circle(1200px at 50px 50px)",
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
     },
     closed: {
       clipPath: "circle(30px at 50px 50px)",
