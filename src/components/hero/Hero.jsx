@@ -76,7 +76,7 @@ const Hero = () => {
         className="slidingTextContainer"
         variants={sliderVariants}
         initial="initial"
-        animate="animate"
+        //animate="animate"
       >
         Solution Mastermind Mech-soldier
       </motion.div>

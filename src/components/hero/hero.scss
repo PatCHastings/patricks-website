@@ -1,11 +1,11 @@
 .hero {
     height: calc(100vh - 100px);
     // overflow: hidden;
-    //background: linear-gradient(45deg, rgba(255, 0, 119, 0), rgb(47, 0, 255));
+    // background: linear-gradient(45deg, rgba(0, 255, 42, 0.534), rgb(255, 72, 0));
     position: relative;
 
     .wrapper {
-        max-width: 1366px; 
+        max-width: 50%; 
         height: 100%;
         margin: auto;
 

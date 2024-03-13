@@ -1,7 +1,9 @@
 import "./App.scss";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
-import Test from "./Test";
+import Parallax from "./components/parallax/parallax";
+import Technologies from "./components/technologies/Technologies";
+import Snowfall from "react-snowfall";
 
 const App = () => {
   return (
@@ -10,11 +12,17 @@ const App = () => {
         <Navbar />
         <Hero />
       </section>
-      <section id="Services">Parallax</section>
-      <section id="Portfolio">Services</section>
-      <section id="Contact">Portfolio</section>
+      <section id="">
+        <Parallax type="technologies" />
+      </section>
+      <section id="Technologies">
+        <Technologies />
+      </section>
+      <section id="Portfolio">
+        <Parallax type="portfolio" />
+      </section>
+      <section>Portfolio</section>
       <section id="Testimonials">Testimonials</section>
-      <section>Team</section>
       <section>Contact</section>
     </div>
   );

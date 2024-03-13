@@ -15,7 +15,7 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Patrick Hastings
+          Portfolio
         </motion.span>
         <div className="social">
           <a href="#">
