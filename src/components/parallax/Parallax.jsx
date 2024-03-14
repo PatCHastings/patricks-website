@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Snowfall from "react-snowfall";
 
-const Parallax = ({ type }) => {
+const Parallax = ({ type, toggleSection }) => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -25,11 +25,15 @@ const Parallax = ({ type }) => {
             : "linear-gradient(180deg, rgb(22, 112, 248), rgb(0, 37, 94)",
       }}
     >
-      <Snowfall />
+      {type === "technologies" && <Snowfall />}
       <motion.h1 style={{ y: yText }}>
         {type === "technologies" ? "Front End" : "Back End"}
       </motion.h1>
-      <motion.div className="topIceBerg"></motion.div>
+      {type === "technologies" ? (
+        <motion.div className="topIceBerg"></motion.div>
+      ) : (
+        <motion.div className="bottomIceBerg"></motion.div>
+      )}
       <motion.div
         className="clouds"
         style={{

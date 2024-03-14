@@ -4,10 +4,12 @@ import Navbar from "./components/navbar/Navbar";
 import Parallax from "./components/parallax/parallax";
 import Technologies from "./components/technologies/Technologies";
 import Snowfall from "react-snowfall";
+import SmoothScroll from "./components/smoothScroll/SmoothScroll";
 
 const App = () => {
   return (
     <div>
+      <SmoothScroll />
       <section id="Homepage">
         <Navbar />
         <Hero />
@@ -18,9 +20,9 @@ const App = () => {
       <section id="Technologies">
         <Technologies />
       </section>
-      <section id="Portfolio">
+      {/* <section id="Portfolio">
         <Parallax type="portfolio" />
-      </section>
+      </section> */}
       <section>Portfolio</section>
       <section id="Testimonials">Testimonials</section>
       <section>Contact</section>

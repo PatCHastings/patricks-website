@@ -24,6 +24,16 @@
         bottom: 0px;
         z-index: 3;
     }
+    .bottomIceBerg {
+        background-image: url("/bottomBerg.png");
+        background-size: cover;
+        background-position: top;
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 0px;
+        z-index: 3;
+    }
 
     .clouds {
         background-image: url("/clouds-transp.png");
