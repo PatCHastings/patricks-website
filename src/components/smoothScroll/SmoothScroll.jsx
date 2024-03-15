@@ -1,31 +1,44 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-const SmoothScroll = () => {
+const SmoothScroll = ({ sectionIds }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [allowScroll, setAllowScroll] = useState(true);
+
   useEffect(() => {
-    // Function to handle the scroll
     const handleWheel = (e) => {
+      if (!allowScroll) return;
       e.preventDefault();
-      const maxScrollSpeed = 3;
-      const scrollAmount = e.deltaY * maxScrollSpeed;
 
-      // Optional: add logic here to adjust scrollAmount based on existing scroll position, etc.
+      // Determine scroll direction
+      const direction = e.deltaY > 0 ? 1 : -1;
 
-      window.scrollTo({
-        top: document.documentElement.scrollTop + scrollAmount,
-        behavior: "smooth",
-      });
+      // Calculate next section index
+      let nextIndex = currentIndex + direction;
+      nextIndex = Math.max(0, Math.min(nextIndex, sectionIds.length - 1));
+
+      // Scroll to the next section if it's different
+      if (nextIndex !== currentIndex) {
+        setAllowScroll(false);
+        const nextSection = document.getElementById(sectionIds[nextIndex]);
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: "smooth" });
+          setCurrentIndex(nextIndex);
+          // Wait for the smooth scroll to finish before allowing new scroll events
+          setTimeout(() => {
+            setAllowScroll(true);
+          }, 1000);
+        } else {
+          // In case of no section found, re-enable scrolling
+          setAllowScroll(true);
+        }
+      }
     };
 
-    // Add event listener
     window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, [currentIndex, allowScroll, sectionIds]);
 
-    // Cleanup function
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
-
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default SmoothScroll;

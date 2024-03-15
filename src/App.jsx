@@ -9,12 +9,21 @@ import SmoothScroll from "./components/smoothScroll/SmoothScroll";
 const App = () => {
   return (
     <div>
-      <SmoothScroll />
+      <SmoothScroll
+        sectionIds={[
+          "Homepage",
+          "Introduction",
+          "Technologies",
+          "Portfolio",
+          "Testimonials",
+          "Contact",
+        ]}
+      />
       <section id="Homepage">
         <Navbar />
         <Hero />
       </section>
-      <section id="">
+      <section id="Introduction">
         <Parallax type="technologies" />
       </section>
       <section id="Technologies">
@@ -23,9 +32,9 @@ const App = () => {
       {/* <section id="Portfolio">
         <Parallax type="portfolio" />
       </section> */}
-      <section>Portfolio</section>
+      <section id="Portfolio">Portfolio</section>
       <section id="Testimonials">Testimonials</section>
-      <section>Contact</section>
+      <section id="Contact">Contact</section>
     </div>
   );
 };

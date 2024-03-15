@@ -28,11 +28,23 @@ const itemVariants = {
 const Links = () => {
   const items = [
     "Homepage",
+    "Introduction",
     "Technologies",
     "Portfolio",
-    "Contact",
     "Testimonials",
+    "Contact",
   ];
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("Element not found:", id);
+    }
+  };
 
   return (
     <motion.div className="links" variants={variants}>
@@ -43,6 +55,7 @@ const Links = () => {
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={(e) => handleClick(e, item)}
         >
           {item}
         </motion.a>
