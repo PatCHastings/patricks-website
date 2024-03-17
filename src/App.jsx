@@ -5,6 +5,7 @@ import Parallax from "./components/parallax/parallax";
 import Technologies from "./components/technologies/Technologies";
 import Snowfall from "react-snowfall";
 import SmoothScroll from "./components/smoothScroll/SmoothScroll";
+import Contact from "./components/contact/Contact";
 
 const App = () => {
   return (
@@ -34,7 +35,9 @@ const App = () => {
       </section> */}
       <section id="Portfolio">Portfolio</section>
       <section id="Testimonials">Testimonials</section>
-      <section id="Contact">Contact</section>
+      <section id="Contact">
+        <Contact />
+      </section>
     </div>
   );
 };

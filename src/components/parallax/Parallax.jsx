@@ -11,8 +11,10 @@ const Parallax = ({ type, toggleSection }) => {
     offset: ["start start", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "700%"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
+  const yBgMid = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
+  const yBgMax = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <div
@@ -29,17 +31,39 @@ const Parallax = ({ type, toggleSection }) => {
       <motion.h1 style={{ y: yText }}>
         {type === "technologies" ? "Front End" : "Back End"}
       </motion.h1>
-      {type === "technologies" ? (
-        <motion.div className="topIceBerg"></motion.div>
-      ) : (
-        <motion.div className="bottomIceBerg"></motion.div>
-      )}
-      <motion.div
+      {/* <motion.div
         className="clouds"
         style={{
           y: yBg,
           backgroundImage: `url(${
-            type === "technologies" ? "/clouds-transp.png" : "/sun.png"
+            type === "technologies" ? "/4mountain.png" : "/sun.png"
+          })`,
+        }}
+      ></motion.div> */}
+      <motion.div
+        className="mountainFar"
+        style={{
+          y: yBg,
+          backgroundImage: `url(${
+            type === "technologies" ? "/4mountain.png" : "/sun.png"
+          })`,
+        }}
+      ></motion.div>
+      <motion.div
+        className="mountainMid"
+        style={{
+          y: yBgMid,
+          backgroundImage: `url(${
+            type === "technologies" ? "/3mountain.png" : "/sun.png"
+          })`,
+        }}
+      ></motion.div>
+      <motion.div
+        className="mountainGray"
+        style={{
+          y: yBgMax,
+          backgroundImage: `url(${
+            type === "technologies" ? "/2mountain.png" : "/sun.png"
           })`,
         }}
       ></motion.div>

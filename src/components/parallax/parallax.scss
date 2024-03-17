@@ -14,36 +14,39 @@
         
     }
 
-    .topIceBerg {
-        background-image: url("/topBerg.png");
-        background-size: cover;
-        background-position: top;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        bottom: 0px;
-        z-index: 3;
-    }
-    .bottomIceBerg {
-        background-image: url("/bottomBerg.png");
-        background-size: cover;
-        background-position: top;
-        width: 100%;
-        height: 80%;
-        position: absolute;
-        top: 0px;
-        z-index: 3;
-    }
-
-    .clouds {
-        background-image: url("/clouds-transp.png");
+    .mountainFar {
+        background-image: url("/4mountain.png");
         background-size: cover;
         background-position: bottom;
         width: 100%;
         height: 100%;
         position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        z-index: 1;
+    }
+    .mountainMid {
+        background-image: url("/3mountain.png");
+        background-size: cover;
+        background-position: top;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
         z-index: 2;
-        overflow: visible;
+    }
+
+    .mountainGray {
+        background-image: url("/2mountain.png");
+        background-size: cover;
+        background-position: bottom;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+        
     }
 
     .stars {
